@@ -1,0 +1,747 @@
+<?xml version="1.0"?>
+<templateDescription xmlns="templateDescription" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="templateDescription http://secure.smilebox.com/xsd/templateDescription.xsd">
+	<templateDetail id="16904">
+		<title>My Special Baby</title><creationTitle>My Special Baby (1)</creationTitle>
+		<templateType>Slideshow</templateType>
+		<templateIcon>templateIcon.jpg</templateIcon>
+		<screenshot>screenShot.jpg</screenshot>
+		<width>1024</width>
+		<height>768</height>
+		<installDate>2015-10-14T10:46:52</installDate><lastUpdatedDate>2015-10-14T10:59:28</lastUpdatedDate>
+		<rights>premium</rights>
+		<minNumberOfPhotos>1</minNumberOfPhotos>
+		<maxNumberOfPhotos>400</maxNumberOfPhotos>
+		<templateLastPublishedDate>2015-08-24 21:58:38:0</templateLastPublishedDate></templateDetail>
+	<globalPanelControls>
+		<control id="musicpicker" targetid="Music" xsi:type="SBMusicPickerControl" preloadHeight="100" preloadWidth="100" type="SBMusicPicker">
+			<updateEventProperty xsi:type="SBSoundLoaderTargetType">SoundPath</updateEventProperty>
+			<style>
+				<selectionColor>0x999999</selectionColor>
+			</style>
+			<label>
+				<text>Choose Your Music:</text>
+			</label>
+			<options>
+				<option label="Love You More" preview="JamesWilliamHindle_LoveYouMore_short.mp3">
+					<content>
+						<soundPath>Rumblefish/Romance/JamesWilliamHindle_LoveYouMore.flv</soundPath>
+					</content>
+				</option>
+				<option label="Classical" preview="Mozart_SerenadeNo13_ALittleNightmusic_RondoAllegro_short.mp3">
+					<content>
+						<soundPath>Rumblefish/Children/Mozart_SerenadeNo13_ALittleNightmusic_RondoAllegro.flv</soundPath>
+					</content>
+				</option>
+				<option label="Fun" preview="FriskaViljor_OnAndOn_Instrumental_short.mp3">
+					<content>
+						<soundPath>Rumblefish/Children/FriskaViljor_OnAndOn_Instrumental.flv</soundPath>
+					</content>
+				</option>
+			</options>
+		</control>
+		<control id="secondMusicPicker" targetid="secondTrack" xsi:type="SBMusicPickerControl" preloadWidth="100" preloadHeight="100" type="SBMusicPicker">
+			<updateEventProperty xsi:type="SBSoundLoaderTargetType">SoundPath</updateEventProperty>
+			<style>
+				<selectionColor>0x333333</selectionColor>
+			</style>
+			<label>
+				<text>Choose Your Second Song:</text>
+			</label>
+			<options>
+			</options>
+		</control>
+	</globalPanelControls>
+	<editPoints>
+		<editPoint id="slide_view" description="slide view" vista="true" multiSnapComponentId="slideshow1">
+			<movieClip name="_root" frame="2"/>
+			<panelControls>
+				<control id="propertyLoader_ColorB" targetid="propertyLoader_ColorB" location="colorPickerControl.swf" preloadWidth="145" preloadHeight="100">
+					<updateEventProperty xsi:type="SBPropertyLoaderTargetType">key</updateEventProperty>
+					<colorPicker>
+						<colorPaletteImage>colorPickerSample.png</colorPaletteImage>
+						<label>
+							<text>Choose Your Accent Color:</text>
+							<position>top</position>
+						</label>
+						<action>
+							<content>
+								<item name="key">ACTION_VALUE</item>
+							</content>
+						</action>
+					</colorPicker>
+				</control>
+				<!--    Enumerated Slider control  -->
+				<control id="propertyLoader_Slider" type="SBEnumeratedSlider" xsi:type="SBSliderControl" targetid="propertyLoader_Slider">
+					<updateEventProperty xsi:type="SBPropertyLoaderTargetType">key</updateEventProperty>
+					<slider xsi:type="SBEnumeratedSliderType">
+						<label>
+							<text>Choose Accent Opacity:</text>
+						</label>
+						<colors>
+							<thumb>0XFFFFFF</thumb>
+						</colors>
+						<sliderFillUri></sliderFillUri>
+						<marks showValueLabels="true">
+							<mark label="0">
+								<content><item name="key">0</item></content>
+							</mark>
+							<mark label="25">
+								<content><item name="key">25</item></content>
+							</mark>
+							<mark label="50">
+								<content><item name="key">50</item></content>
+							</mark>
+							<mark label="75">
+								<content><item name="key">75</item></content>
+							</mark>
+							<mark label="100">
+								<content><item name="key">100</item></content>
+							</mark>
+						</marks>
+					</slider>
+				</control>
+				<control id="loopingSlideshowRadio" type="SBComboBox" targetid="slideshowProperties" xsi:type="SBComboBoxControl" maxItemsVisible="2">
+					<updateEventProperty xsi:type="SBPropertyLoaderTargetType">shouldLoop</updateEventProperty>
+					<style>
+						<selectionColor>0</selectionColor>
+					</style>
+					<label>
+						<text>Choose Replay Option:</text>
+					</label>
+					<options>
+						<option label="Don't Loop Slideshow">
+							<content>
+								<item name="shouldLoop">false</item>
+							</content>
+						</option>
+						<option label="Loop Slideshow">
+							<content>
+								<item name="shouldLoop">true</item>
+							</content>
+						</option>
+					</options>
+				</control>
+				<control id="slideDurationSlider" targetid="slideshow1" type="SBEnumeratedSlider" xsi:type="SBSliderControl">
+					<updateEventProperty xsi:type="SlideshowTargetType">SlideDuration</updateEventProperty>
+					<slider xsi:type="SBEnumeratedSliderType">
+						<label>
+							<text>Slideshow Speed:</text>
+						</label>
+						<colors>
+							<thumb>0XFFFFFF</thumb>
+						</colors>
+						<sliderFillUri>slider2.jpg</sliderFillUri>
+						<marks showValueLabels="true">
+							<mark label="7 Sec.">
+								<style><slideDuration>7</slideDuration></style>
+							</mark>
+							<mark label="6 Sec.">
+								<style><slideDuration>6</slideDuration></style>
+							</mark>
+							<mark label="5 Sec.">
+								<style><slideDuration>5</slideDuration></style>
+							</mark>
+							<mark label="4 Sec.">
+								<style><slideDuration>4</slideDuration></style>
+							</mark>
+							<mark label="3 Sec.">
+								<style><slideDuration>3</slideDuration></style>
+							</mark>
+							<mark label="2 Sec.">
+								<style><slideDuration>2</slideDuration></style>
+							</mark>
+							<mark label="1 Sec.">
+								<style><slideDuration>1</slideDuration></style>
+							</mark>
+						</marks>
+					</slider>
+				</control>
+			</panelControls>
+			<editPointImageUri>edit.jpg</editPointImageUri>
+		</editPoint>
+		<editPoint id="sorter_view" description="sorter view" vista="false" disablePrint="true">
+			<movieClip name="_root" frame="10"/>
+			<editPointImageUri>sorter.jpg</editPointImageUri>
+		</editPoint>
+	</editPoints>
+	<imageAutoPopulateOrder>
+		<image componentId="slideshow1_image0"/>
+		<image componentId="slideshow1_image1"/>
+		<image componentId="slideshow1_image2"/>
+		<image componentId="slideshow1_image3"/>
+		<image componentId="slideshow1_image4"/>
+		<image componentId="slideshow1_image5"/>
+		<image componentId="slideshow1_image6"/>
+		<image componentId="slideshow1_image7"/>
+		<image componentId="slideshow1_image8"/>
+		<image componentId="slideshow1_image9"/>
+		<image componentId="slideshow1_image10"/>
+		<image componentId="slideshow1_image11"/>
+		<image componentId="slideshow1_image12"/>
+		<image componentId="slideshow1_image13"/>
+		<image componentId="slideshow1_image14"/>
+		<image componentId="slideshow1_image15"/>
+		<image componentId="slideshow1_image16"/>
+		<image componentId="slideshow1_image17"/>
+		<image componentId="slideshow1_image18"/>
+		<image componentId="slideshow1_image19"/>
+		<image componentId="slideshow1_image20"/>
+		<image componentId="slideshow1_image21"/>
+		<image componentId="slideshow1_image22"/>
+		<image componentId="slideshow1_image23"/>
+		<image componentId="slideshow1_image24"/>
+		<image componentId="slideshow1_image25"/>
+		<image componentId="slideshow1_image26"/>
+		<image componentId="slideshow1_image27"/>
+		<image componentId="slideshow1_image28"/>
+		<image componentId="slideshow1_image29"/>
+		<image componentId="slideshow1_image30"/>
+		<image componentId="slideshow1_image31"/>
+		<image componentId="slideshow1_image32"/>
+		<image componentId="slideshow1_image33"/>
+		<image componentId="slideshow1_image34"/>
+		<image componentId="slideshow1_image35"/>
+		<image componentId="slideshow1_image36"/>
+		<image componentId="slideshow1_image37"/>
+		<image componentId="slideshow1_image38"/>
+		<image componentId="slideshow1_image39"/>
+		<image componentId="slideshow1_image40"/>
+		<image componentId="slideshow1_image41"/>
+		<image componentId="slideshow1_image42"/>
+		<image componentId="slideshow1_image43"/>
+		<image componentId="slideshow1_image44"/>
+		<image componentId="slideshow1_image45"/>
+		<image componentId="slideshow1_image46"/>
+		<image componentId="slideshow1_image47"/>
+		<image componentId="slideshow1_image48"/>
+		<image componentId="slideshow1_image49"/>
+		<image componentId="slideshow1_image50"/>
+		<image componentId="slideshow1_image51"/>
+		<image componentId="slideshow1_image52"/>
+		<image componentId="slideshow1_image53"/>
+		<image componentId="slideshow1_image54"/>
+		<image componentId="slideshow1_image55"/>
+		<image componentId="slideshow1_image56"/>
+		<image componentId="slideshow1_image57"/>
+		<image componentId="slideshow1_image58"/>
+		<image componentId="slideshow1_image59"/>
+		<image componentId="slideshow1_image60"/>
+		<image componentId="slideshow1_image61"/>
+		<image componentId="slideshow1_image62"/>
+		<image componentId="slideshow1_image63"/>
+		<image componentId="slideshow1_image64"/>
+		<image componentId="slideshow1_image65"/>
+		<image componentId="slideshow1_image66"/>
+		<image componentId="slideshow1_image67"/>
+		<image componentId="slideshow1_image68"/>
+		<image componentId="slideshow1_image69"/>
+		<image componentId="slideshow1_image70"/>
+		<image componentId="slideshow1_image71"/>
+		<image componentId="slideshow1_image72"/>
+		<image componentId="slideshow1_image73"/>
+		<image componentId="slideshow1_image74"/>
+		<image componentId="slideshow1_image75"/>
+		<image componentId="slideshow1_image76"/>
+		<image componentId="slideshow1_image77"/>
+		<image componentId="slideshow1_image78"/>
+		<image componentId="slideshow1_image79"/>
+		<image componentId="slideshow1_image80"/>
+		<image componentId="slideshow1_image81"/>
+		<image componentId="slideshow1_image82"/>
+		<image componentId="slideshow1_image83"/>
+		<image componentId="slideshow1_image84"/>
+		<image componentId="slideshow1_image85"/>
+		<image componentId="slideshow1_image86"/>
+		<image componentId="slideshow1_image87"/>
+		<image componentId="slideshow1_image88"/>
+		<image componentId="slideshow1_image89"/>
+		<image componentId="slideshow1_image90"/>
+		<image componentId="slideshow1_image91"/>
+		<image componentId="slideshow1_image92"/>
+		<image componentId="slideshow1_image93"/>
+		<image componentId="slideshow1_image94"/>
+		<image componentId="slideshow1_image95"/>
+		<image componentId="slideshow1_image96"/>
+		<image componentId="slideshow1_image97"/>
+		<image componentId="slideshow1_image98"/>
+		<image componentId="slideshow1_image99"/>
+		<image componentId="slideshow1_image100"/>
+		<image componentId="slideshow1_image101"/>
+		<image componentId="slideshow1_image102"/>
+		<image componentId="slideshow1_image103"/>
+		<image componentId="slideshow1_image104"/>
+		<image componentId="slideshow1_image105"/>
+		<image componentId="slideshow1_image106"/>
+		<image componentId="slideshow1_image107"/>
+		<image componentId="slideshow1_image108"/>
+		<image componentId="slideshow1_image109"/>
+		<image componentId="slideshow1_image110"/>
+		<image componentId="slideshow1_image111"/>
+		<image componentId="slideshow1_image112"/>
+		<image componentId="slideshow1_image113"/>
+		<image componentId="slideshow1_image114"/>
+		<image componentId="slideshow1_image115"/>
+		<image componentId="slideshow1_image116"/>
+		<image componentId="slideshow1_image117"/>
+		<image componentId="slideshow1_image118"/>
+		<image componentId="slideshow1_image119"/>
+		<image componentId="slideshow1_image120"/>
+		<image componentId="slideshow1_image121"/>
+		<image componentId="slideshow1_image122"/>
+		<image componentId="slideshow1_image123"/>
+		<image componentId="slideshow1_image124"/>
+		<image componentId="slideshow1_image125"/>
+		<image componentId="slideshow1_image126"/>
+		<image componentId="slideshow1_image127"/>
+		<image componentId="slideshow1_image128"/>
+		<image componentId="slideshow1_image129"/>
+		<image componentId="slideshow1_image130"/>
+		<image componentId="slideshow1_image131"/>
+		<image componentId="slideshow1_image132"/>
+		<image componentId="slideshow1_image133"/>
+		<image componentId="slideshow1_image134"/>
+		<image componentId="slideshow1_image135"/>
+		<image componentId="slideshow1_image136"/>
+		<image componentId="slideshow1_image137"/>
+		<image componentId="slideshow1_image138"/>
+		<image componentId="slideshow1_image139"/>
+		<image componentId="slideshow1_image140"/>
+		<image componentId="slideshow1_image141"/>
+		<image componentId="slideshow1_image142"/>
+		<image componentId="slideshow1_image143"/>
+		<image componentId="slideshow1_image144"/>
+		<image componentId="slideshow1_image145"/>
+		<image componentId="slideshow1_image146"/>
+		<image componentId="slideshow1_image147"/>
+		<image componentId="slideshow1_image148"/>
+		<image componentId="slideshow1_image149"/>
+		<image componentId="slideshow1_image150"/>
+		<image componentId="slideshow1_image151"/>
+		<image componentId="slideshow1_image152"/>
+		<image componentId="slideshow1_image153"/>
+		<image componentId="slideshow1_image154"/>
+		<image componentId="slideshow1_image155"/>
+		<image componentId="slideshow1_image156"/>
+		<image componentId="slideshow1_image157"/>
+		<image componentId="slideshow1_image158"/>
+		<image componentId="slideshow1_image159"/>
+		<image componentId="slideshow1_image160"/>
+		<image componentId="slideshow1_image161"/>
+		<image componentId="slideshow1_image162"/>
+		<image componentId="slideshow1_image163"/>
+		<image componentId="slideshow1_image164"/>
+		<image componentId="slideshow1_image165"/>
+		<image componentId="slideshow1_image166"/>
+		<image componentId="slideshow1_image167"/>
+		<image componentId="slideshow1_image168"/>
+		<image componentId="slideshow1_image169"/>
+		<image componentId="slideshow1_image170"/>
+		<image componentId="slideshow1_image171"/>
+		<image componentId="slideshow1_image172"/>
+		<image componentId="slideshow1_image173"/>
+		<image componentId="slideshow1_image174"/>
+		<image componentId="slideshow1_image175"/>
+		<image componentId="slideshow1_image176"/>
+		<image componentId="slideshow1_image177"/>
+		<image componentId="slideshow1_image178"/>
+		<image componentId="slideshow1_image179"/>
+		<image componentId="slideshow1_image180"/>
+		<image componentId="slideshow1_image181"/>
+		<image componentId="slideshow1_image182"/>
+		<image componentId="slideshow1_image183"/>
+		<image componentId="slideshow1_image184"/>
+		<image componentId="slideshow1_image185"/>
+		<image componentId="slideshow1_image186"/>
+		<image componentId="slideshow1_image187"/>
+		<image componentId="slideshow1_image188"/>
+		<image componentId="slideshow1_image189"/>
+		<image componentId="slideshow1_image190"/>
+		<image componentId="slideshow1_image191"/>
+		<image componentId="slideshow1_image192"/>
+		<image componentId="slideshow1_image193"/>
+		<image componentId="slideshow1_image194"/>
+		<image componentId="slideshow1_image195"/>
+		<image componentId="slideshow1_image196"/>
+		<image componentId="slideshow1_image197"/>
+		<image componentId="slideshow1_image198"/>
+		<image componentId="slideshow1_image199"/>
+		<image componentId="slideshow1_image200"/>
+		<image componentId="slideshow1_image201"/>
+		<image componentId="slideshow1_image202"/>
+		<image componentId="slideshow1_image203"/>
+		<image componentId="slideshow1_image204"/>
+		<image componentId="slideshow1_image205"/>
+		<image componentId="slideshow1_image206"/>
+		<image componentId="slideshow1_image207"/>
+		<image componentId="slideshow1_image208"/>
+		<image componentId="slideshow1_image209"/>
+		<image componentId="slideshow1_image210"/>
+		<image componentId="slideshow1_image211"/>
+		<image componentId="slideshow1_image212"/>
+		<image componentId="slideshow1_image213"/>
+		<image componentId="slideshow1_image214"/>
+		<image componentId="slideshow1_image215"/>
+		<image componentId="slideshow1_image216"/>
+		<image componentId="slideshow1_image217"/>
+		<image componentId="slideshow1_image218"/>
+		<image componentId="slideshow1_image219"/>
+		<image componentId="slideshow1_image220"/>
+		<image componentId="slideshow1_image221"/>
+		<image componentId="slideshow1_image222"/>
+		<image componentId="slideshow1_image223"/>
+		<image componentId="slideshow1_image224"/>
+		<image componentId="slideshow1_image225"/>
+		<image componentId="slideshow1_image226"/>
+		<image componentId="slideshow1_image227"/>
+		<image componentId="slideshow1_image228"/>
+		<image componentId="slideshow1_image229"/>
+		<image componentId="slideshow1_image230"/>
+		<image componentId="slideshow1_image231"/>
+		<image componentId="slideshow1_image232"/>
+		<image componentId="slideshow1_image233"/>
+		<image componentId="slideshow1_image234"/>
+		<image componentId="slideshow1_image235"/>
+		<image componentId="slideshow1_image236"/>
+		<image componentId="slideshow1_image237"/>
+		<image componentId="slideshow1_image238"/>
+		<image componentId="slideshow1_image239"/>
+		<image componentId="slideshow1_image240"/>
+		<image componentId="slideshow1_image241"/>
+		<image componentId="slideshow1_image242"/>
+		<image componentId="slideshow1_image243"/>
+		<image componentId="slideshow1_image244"/>
+		<image componentId="slideshow1_image245"/>
+		<image componentId="slideshow1_image246"/>
+		<image componentId="slideshow1_image247"/>
+		<image componentId="slideshow1_image248"/>
+		<image componentId="slideshow1_image249"/>
+		<image componentId="slideshow1_image250"/>
+		<image componentId="slideshow1_image251"/>
+		<image componentId="slideshow1_image252"/>
+		<image componentId="slideshow1_image253"/>
+		<image componentId="slideshow1_image254"/>
+		<image componentId="slideshow1_image255"/>
+		<image componentId="slideshow1_image256"/>
+		<image componentId="slideshow1_image257"/>
+		<image componentId="slideshow1_image258"/>
+		<image componentId="slideshow1_image259"/>
+		<image componentId="slideshow1_image260"/>
+		<image componentId="slideshow1_image261"/>
+		<image componentId="slideshow1_image262"/>
+		<image componentId="slideshow1_image263"/>
+		<image componentId="slideshow1_image264"/>
+		<image componentId="slideshow1_image265"/>
+		<image componentId="slideshow1_image266"/>
+		<image componentId="slideshow1_image267"/>
+		<image componentId="slideshow1_image268"/>
+		<image componentId="slideshow1_image269"/>
+		<image componentId="slideshow1_image270"/>
+		<image componentId="slideshow1_image271"/>
+		<image componentId="slideshow1_image272"/>
+		<image componentId="slideshow1_image273"/>
+		<image componentId="slideshow1_image274"/>
+		<image componentId="slideshow1_image275"/>
+		<image componentId="slideshow1_image276"/>
+		<image componentId="slideshow1_image277"/>
+		<image componentId="slideshow1_image278"/>
+		<image componentId="slideshow1_image279"/>
+		<image componentId="slideshow1_image280"/>
+		<image componentId="slideshow1_image281"/>
+		<image componentId="slideshow1_image282"/>
+		<image componentId="slideshow1_image283"/>
+		<image componentId="slideshow1_image284"/>
+		<image componentId="slideshow1_image285"/>
+		<image componentId="slideshow1_image286"/>
+		<image componentId="slideshow1_image287"/>
+		<image componentId="slideshow1_image288"/>
+		<image componentId="slideshow1_image289"/>
+		<image componentId="slideshow1_image290"/>
+		<image componentId="slideshow1_image291"/>
+		<image componentId="slideshow1_image292"/>
+		<image componentId="slideshow1_image293"/>
+		<image componentId="slideshow1_image294"/>
+		<image componentId="slideshow1_image295"/>
+		<image componentId="slideshow1_image296"/>
+		<image componentId="slideshow1_image297"/>
+		<image componentId="slideshow1_image298"/>
+		<image componentId="slideshow1_image299"/>
+		<image componentId="slideshow1_image300"/>
+		<image componentId="slideshow1_image301"/>
+		<image componentId="slideshow1_image302"/>
+		<image componentId="slideshow1_image303"/>
+		<image componentId="slideshow1_image304"/>
+		<image componentId="slideshow1_image305"/>
+		<image componentId="slideshow1_image306"/>
+		<image componentId="slideshow1_image307"/>
+		<image componentId="slideshow1_image308"/>
+		<image componentId="slideshow1_image309"/>
+		<image componentId="slideshow1_image310"/>
+		<image componentId="slideshow1_image311"/>
+		<image componentId="slideshow1_image312"/>
+		<image componentId="slideshow1_image313"/>
+		<image componentId="slideshow1_image314"/>
+		<image componentId="slideshow1_image315"/>
+		<image componentId="slideshow1_image316"/>
+		<image componentId="slideshow1_image317"/>
+		<image componentId="slideshow1_image318"/>
+		<image componentId="slideshow1_image319"/>
+		<image componentId="slideshow1_image320"/>
+		<image componentId="slideshow1_image321"/>
+		<image componentId="slideshow1_image322"/>
+		<image componentId="slideshow1_image323"/>
+		<image componentId="slideshow1_image324"/>
+		<image componentId="slideshow1_image325"/>
+		<image componentId="slideshow1_image326"/>
+		<image componentId="slideshow1_image327"/>
+		<image componentId="slideshow1_image328"/>
+		<image componentId="slideshow1_image329"/>
+		<image componentId="slideshow1_image330"/>
+		<image componentId="slideshow1_image331"/>
+		<image componentId="slideshow1_image332"/>
+		<image componentId="slideshow1_image333"/>
+		<image componentId="slideshow1_image334"/>
+		<image componentId="slideshow1_image335"/>
+		<image componentId="slideshow1_image336"/>
+		<image componentId="slideshow1_image337"/>
+		<image componentId="slideshow1_image338"/>
+		<image componentId="slideshow1_image339"/>
+		<image componentId="slideshow1_image340"/>
+		<image componentId="slideshow1_image341"/>
+		<image componentId="slideshow1_image342"/>
+		<image componentId="slideshow1_image343"/>
+		<image componentId="slideshow1_image344"/>
+		<image componentId="slideshow1_image345"/>
+		<image componentId="slideshow1_image346"/>
+		<image componentId="slideshow1_image347"/>
+		<image componentId="slideshow1_image348"/>
+		<image componentId="slideshow1_image349"/>
+		<image componentId="slideshow1_image350"/>
+		<image componentId="slideshow1_image351"/>
+		<image componentId="slideshow1_image352"/>
+		<image componentId="slideshow1_image353"/>
+		<image componentId="slideshow1_image354"/>
+		<image componentId="slideshow1_image355"/>
+		<image componentId="slideshow1_image356"/>
+		<image componentId="slideshow1_image357"/>
+		<image componentId="slideshow1_image358"/>
+		<image componentId="slideshow1_image359"/>
+		<image componentId="slideshow1_image360"/>
+		<image componentId="slideshow1_image361"/>
+		<image componentId="slideshow1_image362"/>
+		<image componentId="slideshow1_image363"/>
+		<image componentId="slideshow1_image364"/>
+		<image componentId="slideshow1_image365"/>
+		<image componentId="slideshow1_image366"/>
+		<image componentId="slideshow1_image367"/>
+		<image componentId="slideshow1_image368"/>
+		<image componentId="slideshow1_image369"/>
+		<image componentId="slideshow1_image370"/>
+		<image componentId="slideshow1_image371"/>
+		<image componentId="slideshow1_image372"/>
+		<image componentId="slideshow1_image373"/>
+		<image componentId="slideshow1_image374"/>
+		<image componentId="slideshow1_image375"/>
+		<image componentId="slideshow1_image376"/>
+		<image componentId="slideshow1_image377"/>
+		<image componentId="slideshow1_image378"/>
+		<image componentId="slideshow1_image379"/>
+		<image componentId="slideshow1_image380"/>
+		<image componentId="slideshow1_image381"/>
+		<image componentId="slideshow1_image382"/>
+		<image componentId="slideshow1_image383"/>
+		<image componentId="slideshow1_image384"/>
+		<image componentId="slideshow1_image385"/>
+		<image componentId="slideshow1_image386"/>
+		<image componentId="slideshow1_image387"/>
+		<image componentId="slideshow1_image388"/>
+		<image componentId="slideshow1_image389"/>
+		<image componentId="slideshow1_image390"/>
+		<image componentId="slideshow1_image391"/>
+		<image componentId="slideshow1_image392"/>
+		<image componentId="slideshow1_image393"/>
+		<image componentId="slideshow1_image394"/>
+		<image componentId="slideshow1_image395"/>
+		<image componentId="slideshow1_image396"/>
+		<image componentId="slideshow1_image397"/>
+		<image componentId="slideshow1_image398"/>
+		<image componentId="slideshow1_image399"/>
+		<image componentId="slideshow1_image400"/>
+		<image componentId="slideshow1_image401"/>
+		<image componentId="slideshow1_image402"/>
+		<image componentId="slideshow1_image403"/>
+		<image componentId="slideshow1_image404"/>
+		<image componentId="slideshow1_image405"/>
+		<image componentId="slideshow1_image406"/>
+		<image componentId="slideshow1_image407"/>
+		<image componentId="slideshow1_image408"/>
+		<image componentId="slideshow1_image409"/>
+		<image componentId="slideshow1_image410"/>
+		<image componentId="slideshow1_image411"/>
+		<image componentId="slideshow1_image412"/>
+		<image componentId="slideshow1_image413"/>
+		<image componentId="slideshow1_image414"/>
+		<image componentId="slideshow1_image415"/>
+		<image componentId="slideshow1_image416"/>
+		<image componentId="slideshow1_image417"/>
+		<image componentId="slideshow1_image418"/>
+		<image componentId="slideshow1_image419"/>
+		<image componentId="slideshow1_image420"/>
+		<image componentId="slideshow1_image421"/>
+		<image componentId="slideshow1_image422"/>
+		<image componentId="slideshow1_image423"/>
+		<image componentId="slideshow1_image424"/>
+		<image componentId="slideshow1_image425"/>
+		<image componentId="slideshow1_image426"/>
+		<image componentId="slideshow1_image427"/>
+		<image componentId="slideshow1_image428"/>
+		<image componentId="slideshow1_image429"/>
+		<image componentId="slideshow1_image430"/>
+		<image componentId="slideshow1_image431"/>
+		<image componentId="slideshow1_image432"/>
+		<image componentId="slideshow1_image433"/>
+		<image componentId="slideshow1_image434"/>
+		<image componentId="slideshow1_image435"/>
+		<image componentId="slideshow1_image436"/>
+		<image componentId="slideshow1_image437"/>
+		<image componentId="slideshow1_image438"/>
+		<image componentId="slideshow1_image439"/>
+		<image componentId="slideshow1_image440"/>
+		<image componentId="slideshow1_image441"/>
+		<image componentId="slideshow1_image442"/>
+		<image componentId="slideshow1_image443"/>
+		<image componentId="slideshow1_image444"/>
+		<image componentId="slideshow1_image445"/>
+		<image componentId="slideshow1_image446"/>
+		<image componentId="slideshow1_image447"/>
+		<image componentId="slideshow1_image448"/>
+		<image componentId="slideshow1_image449"/>
+		<image componentId="slideshow1_image450"/>
+		<image componentId="slideshow1_image451"/>
+		<image componentId="slideshow1_image452"/>
+		<image componentId="slideshow1_image453"/>
+		<image componentId="slideshow1_image454"/>
+		<image componentId="slideshow1_image455"/>
+		<image componentId="slideshow1_image456"/>
+		<image componentId="slideshow1_image457"/>
+		<image componentId="slideshow1_image458"/>
+		<image componentId="slideshow1_image459"/>
+		<image componentId="slideshow1_image460"/>
+		<image componentId="slideshow1_image461"/>
+		<image componentId="slideshow1_image462"/>
+		<image componentId="slideshow1_image463"/>
+		<image componentId="slideshow1_image464"/>
+		<image componentId="slideshow1_image465"/>
+		<image componentId="slideshow1_image466"/>
+		<image componentId="slideshow1_image467"/>
+		<image componentId="slideshow1_image468"/>
+		<image componentId="slideshow1_image469"/>
+		<image componentId="slideshow1_image470"/>
+		<image componentId="slideshow1_image471"/>
+		<image componentId="slideshow1_image472"/>
+		<image componentId="slideshow1_image473"/>
+		<image componentId="slideshow1_image474"/>
+		<image componentId="slideshow1_image475"/>
+		<image componentId="slideshow1_image476"/>
+		<image componentId="slideshow1_image477"/>
+		<image componentId="slideshow1_image478"/>
+		<image componentId="slideshow1_image479"/>
+		<image componentId="slideshow1_image480"/>
+		<image componentId="slideshow1_image481"/>
+		<image componentId="slideshow1_image482"/>
+		<image componentId="slideshow1_image483"/>
+		<image componentId="slideshow1_image484"/>
+		<image componentId="slideshow1_image485"/>
+		<image componentId="slideshow1_image486"/>
+		<image componentId="slideshow1_image487"/>
+		<image componentId="slideshow1_image488"/>
+		<image componentId="slideshow1_image489"/>
+		<image componentId="slideshow1_image490"/>
+		<image componentId="slideshow1_image491"/>
+		<image componentId="slideshow1_image492"/>
+		<image componentId="slideshow1_image493"/>
+		<image componentId="slideshow1_image494"/>
+		<image componentId="slideshow1_image495"/>
+		<image componentId="slideshow1_image496"/>
+		<image componentId="slideshow1_image497"/>
+		<image componentId="slideshow1_image498"/>
+		<image componentId="slideshow1_image499"/>
+	</imageAutoPopulateOrder>
+	<toolbars>
+		<toolbarControls style="textToolbar">
+			<control type="SBFontComboBox" xsi:type="SBFontComboBoxControl">
+				<options>
+					<option label="Bebas Neue">
+						<content>
+							<font>Bebas Neue</font>
+						</content>
+					</option>
+					<option label="Bodoni Egyptian Pro">
+						<content>
+							<font>Bodoni Egyptian Pro</font>
+						</content>
+					</option>
+					<option label="Century Gothic">
+						<content>
+							<font>Century Gothic</font>
+						</content>
+					</option>
+					<option label="MankSans">
+						<content>
+							<font>MankSans</font>
+						</content>
+					</option>
+				</options>
+			</control>
+			<control type="SBSizeSlider" xsi:type="SBSizeSliderControl">
+				<!-- comment this labelText out if you dont want font sizes on your slider. -->
+				<labelText>Size: 00</labelText>
+			</control>
+			<control type="SBColorExclusiveToggleButton" xsi:type="SBColorExclusiveToggleButtonControl">
+				<options>
+					<option>
+						<action>
+							<color>0xFFFFff</color>
+						</action>
+					</option>
+					<option>
+						<action>
+							<color>0xffe062</color>
+						</action>
+					</option>
+					<option>
+						<action>
+							<color>0xef296f</color>
+						</action>
+					</option>
+					<option>
+						<action>
+							<color>0x62e0ff</color>
+						</action>
+					</option>
+					<option>
+						<action>
+							<color>0x6662ff</color>
+						</action>
+					</option>
+					<option>
+						<action>
+							<color>0x78dc48</color>
+						</action>
+					</option>
+					<option>
+						<action>
+							<color>0x424242</color>
+						</action>
+					</option>
+				</options>
+			</control>
+			<control type="SBAlignmentExclusiveToggleButton" xsi:type="SBAlignmentExclusiveToggleButtonControl"/>
+			<components assignByType="SBTextLoader"/>
+		</toolbarControls>
+		<toolbarControls definition="fitImage">
+			<components>
+				<component id="image1"/>
+			</components>
+		</toolbarControls>
+	</toolbars>
+</templateDescription>
